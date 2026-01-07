@@ -95,6 +95,15 @@ export function Header() {
           >
             <Mail className="w-5 h-5" />
             <span>hello@yanforge.com</span>
+          </nav>
+
+          {/* Desktop Email near Logo */}
+          <a
+            href="mailto:hello@yanforge.com"
+            className="hidden md:flex items-center gap-2 ml-2 px-3 py-2 rounded-lg text-sm text-secondary-foreground hover:text-forge-orange hover:bg-forge-orange/10 transition-colors"
+          >
+            <Mail className="w-5 h-5" />
+            <span>hello@yanforge.com</span>
           </a>
 
           {/* Desktop Social Icons */}
