@@ -98,10 +98,10 @@ export function FAQSection() {
   };
 
   return (
-    <section className="section-padding bg-background px-4 sm:px-6" id="faq">
+    <section className="pt-12 sm:pt-16 pb-6 sm:pb-8 bg-background px-4 sm:px-6" id="faq">
       <div className="container-wide">
         <div ref={ref}>
-          <div className={cn("max-w-3xl mb-10 sm:mb-16 reveal", isVisible && "visible")}>
+          <div className={cn("max-w-3xl mb-6 sm:mb-8 reveal", isVisible && "visible")}>
             <p className="text-forge-orange font-medium tracking-wider uppercase text-xs sm:text-sm mb-3 sm:mb-4">
               FAQ
             </p>

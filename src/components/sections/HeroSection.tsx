@@ -51,7 +51,9 @@ function HeroLivePreview() {
             <p className="text-muted-foreground max-w-md mx-auto">
               Monitor your business performance with custom dashboards designed for your specific metrics.
             </p>
-            <Button variant="forge" className="mt-6">Explore Features</Button>
+            <Button variant="forge" className="mt-6" asChild>
+              <Link to="/services">Explore Features</Link>
+            </Button>
           </div>
         </div>
 
