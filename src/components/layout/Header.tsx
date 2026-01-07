@@ -1,7 +1,6 @@
-import { Button } from "@/components/ui/button";
 import { useState, useEffect } from "react";
 import { cn } from "@/lib/utils";
-import { Menu, X, ArrowRight, Linkedin, Facebook, Instagram, MessageCircle, Mail } from "lucide-react";
+import { Menu, X, ArrowRight, Linkedin, Facebook, Instagram, MessageCircle } from "lucide-react";
 import { Link, useLocation } from "react-router-dom";
 import yanforgeLogo from "@/assets/yanforge-logo.jpeg";
 
@@ -88,23 +87,6 @@ export function Header() {
             ))}
           </nav>
 
-          {/* Desktop Email near Logo */}
-          <a
-            href="mailto:hello@yanforge.com"
-            className="hidden md:flex items-center gap-2 ml-2 px-3 py-2 rounded-lg text-sm text-secondary-foreground hover:text-forge-orange hover:bg-forge-orange/10 transition-colors"
-          >
-            <Mail className="w-5 h-5" />
-            <span>hello@yanforge.com</span>
-          </nav>
-
-          {/* Desktop Email near Logo */}
-          <a
-            href="mailto:hello@yanforge.com"
-            className="hidden md:flex items-center gap-2 ml-2 px-3 py-2 rounded-lg text-sm text-secondary-foreground hover:text-forge-orange hover:bg-forge-orange/10 transition-colors"
-          >
-            <Mail className="w-5 h-5" />
-            <span>hello@yanforge.com</span>
-          </a>
 
           {/* Desktop Social Icons */}
           <div className="hidden md:flex items-center gap-3 ml-2">
@@ -146,15 +128,7 @@ export function Header() {
             </a>
           </div>
 
-          {/* CTA */}
-          <div className="hidden md:block">
-            <Button variant="forge" size="default" asChild className="group">
-              <Link to="/contact">
-                Get Started
-                <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
-              </Link>
-            </Button>
-          </div>
+          
 
           {/* Mobile Toggle */}
           <button 

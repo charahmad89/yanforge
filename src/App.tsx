@@ -23,7 +23,12 @@ const App = () => (
       <TooltipProvider>
         <Toaster />
         <Sonner />
-        <BrowserRouter>
+        <BrowserRouter
+          future={{
+            v7_startTransition: true,
+            v7_relativeSplatPath: true,
+          }}
+        >
           <ScrollToTop />
           <Suspense fallback={<div className="p-8 text-center text-muted-foreground">Loading...</div>}>
             <Routes>
