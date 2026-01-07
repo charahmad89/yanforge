@@ -237,14 +237,7 @@ export function Header() {
                 <Instagram className="w-5 h-5" />
               </a>
             </div>
-            <div className="pt-4">
-              <Button variant="forge" size="lg" className="w-full" asChild>
-                <Link to="/contact">
-                  Get Started
-                  <ArrowRight className="ml-2 h-4 w-4" />
-                </Link>
-              </Button>
-            </div>
+
           </nav>
         </div>
       </div>

@@ -118,7 +118,7 @@ export default function Privacy() {
                   If you have any questions about this Privacy Policy, please contact us at:
                 </p>
                 <p className="text-forge-orange font-medium mt-2">
-                  <a href="mailto:yanforge09@gmail.com" className="hover:underline">yanforge09@gmail.com</a> | <a href="mailto:hello@yanforge.com" className="hover:underline">hello@yanforge.com</a> | <a href="tel:+923281441362" className="hover:underline">+92 328 144 1362</a>
+                  <a href="mailto:hello@yanforge.com" className="hover:underline">hello@yanforge.com</a> | <a href="tel:+923281441362" className="hover:underline">+92 328 144 1362</a>
                 </p>
               </div>
             </div>

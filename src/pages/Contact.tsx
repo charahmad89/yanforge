@@ -18,12 +18,36 @@ export default function Contact() {
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     setIsSubmitting(true);
-    
-    await new Promise(resolve => setTimeout(resolve, 1500));
-    
-    toast.success("Message sent successfully! We'll get back to you within 24 hours.");
-    setIsSubmitting(false);
-    (e.target as HTMLFormElement).reset();
+    try {
+      const form = e.target as HTMLFormElement;
+      const formData = new FormData(form);
+      const payload = {
+        name: String(formData.get("name") || ""),
+        email: String(formData.get("email") || ""),
+        company: String(formData.get("company") || ""),
+        service: String(formData.get("service") || ""),
+        message: String(formData.get("message") || ""),
+      };
+
+      const res = await fetch("/api/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(payload),
+      });
+
+      if (!res.ok) {
+        const data = await res.json().catch(() => ({}));
+        throw new Error(data?.error || "Failed to send message");
+      }
+
+      toast.success("Message sent successfully! We'll get back to you within 24 hours.");
+      form.reset();
+    } catch (err) {
+      const message = err instanceof Error ? err.message : "Something went wrong. Please try again later.";
+      toast.error(message);
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   const whatsappNumber = "923281441362";
@@ -49,7 +73,7 @@ export default function Contact() {
               "@type": "Organization",
               "name": "Yanforge",
               "telephone": "+923281441362",
-              "email": "yanforge09@gmail.com",
+              "email": "hello@yanforge.com",
               "openingHoursSpecification": {
                 "@type": "OpeningHoursSpecification",
                 "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"],
@@ -59,7 +83,7 @@ export default function Contact() {
               "contactPoint": [
                 {
                   "@type": "ContactPoint",
-                  "email": "yanforge09@gmail.com",
+                  "email": "hello@yanforge.com",
                   "contactType": "customer service",
                   "availableLanguage": ["English", "Urdu"]
                 },
@@ -209,9 +233,6 @@ export default function Contact() {
                       <div>
                         <h3 className="font-display font-semibold text-foreground mb-1 text-sm sm:text-base">Email</h3>
                         <div className="flex flex-col">
-                          <a href="mailto:yanforge09@gmail.com" className="text-sm sm:text-base text-muted-foreground hover:text-forge-orange transition-all duration-300">
-                            yanforge09@gmail.com
-                          </a>
                           <a href="mailto:hello@yanforge.com" className="text-sm sm:text-base text-muted-foreground hover:text-forge-orange transition-all duration-300">
                             hello@yanforge.com
                           </a>

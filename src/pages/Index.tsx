@@ -55,11 +55,6 @@ const Index = () => {
             "contactPoint": [
               {
                 "@type": "ContactPoint",
-                "email": "yanforge09@gmail.com",
-                "contactType": "customer service"
-              },
-              {
-                "@type": "ContactPoint",
                 "email": "hello@yanforge.com",
                 "contactType": "customer service"
               }
